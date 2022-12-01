@@ -14,7 +14,6 @@ Plant.init({
     name: {
         type: DataTypes.STRING,
         allowNull: false,
-        type: DataTypes.TEXT
     },
     description: {
         type: DataTypes.TEXT,

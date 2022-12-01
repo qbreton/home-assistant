@@ -1,17 +1,17 @@
 const request = require('request');
-const Plant = require('../../db/models/Plant');
+const Task = require('../../db/models/Task');
 
 exports.list = async (req, res) => {
-    const plants = await Plant.findAll();
-    res.status(200).json(plants);
+    const tasks = await Task.findAll();
+    res.status(200).json(tasks);
 }
 
 exports.create = async(req, res) => {
-    const plant = {
+    const task = {
         ...req.body
     };
 
-    Plant.create(plant)
+    Task.create(task)
         .then(data => {
             res.send(data);
         })

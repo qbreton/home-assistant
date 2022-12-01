@@ -8,7 +8,8 @@ const dbPassword = process.env.DB_PASSWORD
 
 const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
     host: dbHost,
-    dialect: dbDriver
+    dialect: dbDriver,
+    query: { raw: true}
 })
 
 module.exports = sequelize
