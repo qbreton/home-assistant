@@ -1,11 +1,11 @@
-const { DataTypes, DATE, Model} = require('sequelize')
-const { sequelizeConnection } = require('../config')
+const { DataTypes, Model} = require('sequelize')
+const sequelize = require('../config')
 
 class Plant extends Model {}
 
 Plant.init({
     id: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -33,4 +33,4 @@ Plant.init({
     modelName: 'Plant'
 })
 
-export default Plant;
+module.exports = Plant;

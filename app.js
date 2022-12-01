@@ -1,19 +1,14 @@
 const express = require("express");
+require('dotenv').config();
+
+// Controllers
+const plantController = require("./src/resources/plant/plant.controller");
 
 const app = express();
 
 app.use(express.json());
 
-const fakeDB = [
-  {
-    id: Math.floor(Math.random() * 100),
-    email: "test@example.com",
-  },
-];
-
-app.get("/plants", (req, res) => {
-  return res.status(200).json({ data: fakeDB });
-});
+app.get("/plants", plantController.list);
 
 app.post("/send", (req, res) => {
   fakeDB.push({
